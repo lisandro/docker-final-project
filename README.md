@@ -52,7 +52,7 @@ La aplicación utiliza un par de comandos para realizar la migración de la base
 Si esta utilizando alguna tecnología de virtualización considere los siguientes pasos:
  1. Copiar el script en la raíz del servidor: ```$> cp entrypoint.sh /entrypoint.sh```
  2. Asignarle permisos de ejecución: ```$> chmod +x /entrypoint.sh```
- 3. Una vez relaizados los pasos 1 y 2 ya puede asignarlo como script de ejecución automático.
+ 3. Una vez realizados los pasos 1 y 2 ya puede asignarlo como script de ejecución automático.
 
 Por último es necesario inicializar la aplicación Apache por default. Puede utilizar comandos como ```service apache2 start``` pero si está pensando en virtualizar la aplicación le sugiero que utilice el siguiente comando para inicializar el servidor web:
 ```
