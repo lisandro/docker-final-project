@@ -14,8 +14,8 @@ chmod -R g+rw /opt/www/worldapi/storage
 #    sleep 30
 #    Trying something more interesting to check MySQL server status
 #
-export TESTING_MYSQL_URL="tcp://${MYSQL_PORT_3306_TCP_ADDR}:${MYSQL_PORT_3306_TCP_ADDR}"
-while ! exec 6<>/dev/tcp/${MYSQL_PORT_3306_TCP_ADDR}/${MYSQL_PORT_3306_TCP_ADDR}; do
+export TESTING_MYSQL_URL="tcp://${MYSQL_PORT_3306_TCP_ADDR}:${MYSQL_PORT_3306_TCP_PORT}"
+while ! exec 6<>/dev/tcp/${MYSQL_PORT_3306_TCP_ADDR}/${MYSQL_PORT_3306_TCP_PORT}; do
     echo "$(date) - still trying to connect to MySQL at ${TESTING_MYSQL_URL}"
     sleep 1
 done
