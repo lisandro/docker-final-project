@@ -9,8 +9,7 @@ web:
 db:
   image: mysql:5.6
   environment:
-    MYSQL_HOST: localhost
+    MYSQL_ROOT_PASSWORD: my-secret-pw
     MYSQL_DATABASE: homestead
     MYSQL_USER: homestead
     MYSQL_PASSWORD: secret
-    MYSQL_ROOT_PASSWORD: my-secret-pw

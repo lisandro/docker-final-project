@@ -3,7 +3,7 @@ FROM ubuntu:14.04.2
 # Author
 MAINTAINER Lisandro Falconi <lfalconi@devspark.com>
 
-# Install Apache, PHP, and supplimentary programs. curl and lynx-cur are for debugging the container.
+# Install Apache, PHP, and supplementary programs. curl and lynx-cur are for debugging the container.
 RUN apt-get update && apt-get install -y \
       apache2 \
       libapache2-mod-php5 \

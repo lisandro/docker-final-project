@@ -11,7 +11,14 @@ chmod -R g+rw /opt/www/worldapi/storage
 #    A good practice here, could be to try to find a command to check the MySQL status 
 #    and avoid use the sleep command since it is not a synchronization guarantee.
 #
-sleep 30
+#    sleep 30
+#    Trying something more interesting to check MySQL server status
+#
+export TESTING_MYSQL_URL="tcp://${MYSQL_PORT_3306_TCP_ADDR}:${MYSQL_PORT_3306_TCP_ADDR}"
+while ! exec 6<>/dev/tcp/${MYSQL_PORT_3306_TCP_ADDR}/${MYSQL_PORT_3306_TCP_ADDR}; do
+    echo "$(date) - still trying to connect to MySQL at ${TESTING_MYSQL_URL}"
+    sleep 1
+done
 
 #4 - Run database migration
 php /opt/www/worldapi/artisan migrate

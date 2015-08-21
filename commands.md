@@ -1,3 +1,4 @@
+#Web container
 ```
 docker run
 
@@ -11,15 +12,16 @@ docker run
 
 -v ./worldapi:/opt/www/worldapi
 
---add-host api.world.com.ar:127.0.0.1
 ```
+
+#MySQL container
 
 ```
 docker run
 
 --name mysql
 
--e MYSQL_HOST=localhost
+-e MYSQL_ROOT_PASSWORD=my-secret-pw
 
 -e MYSQL_DATABASE=homestead
 
